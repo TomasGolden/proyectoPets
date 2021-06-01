@@ -4,8 +4,12 @@ const app = express();
 const methodOverride = require('method-override');
 const dotenv = require('dotenv');
 
-var mysql = require('mysql');
-var connection = mysql.createConnection(process.env.JAWSDB_URL);
+ var mysql = require('mysql');
+var connection = mysql.createConnection(process.env.JAWSDB_URL || {'host'    : '127.0.0.1',
+  user     : 'root',
+  password : '',
+  database : 'petshop'
+});
 
 connection.connect();
 
