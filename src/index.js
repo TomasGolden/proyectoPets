@@ -24,6 +24,8 @@ const cookieParser = require('cookie-parser');
 const authUser = require("./middlewares/authUser.js");
 const userIsLogged = require("./middlewares/userIsLogged.js");
 
+
+
 app.set('puerto', process.env.PORT || 3001);
 
 app.use(express.urlencoded({

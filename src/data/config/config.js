@@ -14,10 +14,10 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": "j7rl561cgwhj6jce",
-    "password": "h9geofoynjg3ezxw",
-    "database": "b4n2fdg4bwp62f2j",
-    "host": "tvcpw8tpu4jvgnnq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "ytuwdml7fy8r1oi6",
+    "password": "xrvavrcx70mwth18",
+    "database": "bv1tqmvnt5993ywm",
+    "host": "pxukqohrckdfo4ty.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
