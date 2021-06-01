@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/edicionProducto.css">
+
+    <body>
+        <!----------HEADER---------->
+        <%- include('../partials/header.ejs') %>
+
+            <!----------MAIN---------->
+            <main class="main">
+                <div class="contenedor">
+                    <section class="nuevoProducto">
+                        <h1 class="titulo">Editar producto</h1>
+                    </section>
+                    <section class="form">
+                        <form action="/producto/editar/<%= producto.id%>?_method=PUT" method="POST"
+                            enctype="multipart/form-data">
+                            <div class="campo">
+                                <strong>
+                                    <label class="subtitulo" for="nombre">Nombre</label>
+                                </strong>
+                                <input type="text" name="nombre" class="barra" value="<%=producto.name || ""%>">
+
+                            </div>
+                            <div class="campo">
+                                <strong>
+                                    <label class="subtitulo" for="descripcion">Descripción</label>
+                                </strong>
+                                <textarea name="descripcion" class="barra"
+                                    required><%=producto.description || ""%></textarea>
+
+                            </div>
+                            <div class="btn_imagen" style="margin-top: 5%;">
+                                <label for="imagen" class="label_imagen">
+                                    <i class="fa fa-upload" aria-hidden="true"></i>
+                                    <span>Cargar imagen del producto</span>
+                                </label>
+                                <input type="file" name="imagen" id="imagen" class="hidden" accept="image/*">
+                                <p id="fileName">
+                                    <%=producto.image || "No ha cargado ningun archivo" %>
+                                </p>
+                            </div>
+
+                            <div class="campo">
+                                <strong>
+                                    <label class="subtitulo" for="categoria">Categoría</label>
+                                </strong>
+                                <select name="categoria">
+                                    <% for(let i=0; i<categorias.length; i++) { %>
+                                        <option name="alimento" value=<%=categorias[i].id%>
+                                            <%=producto.category.id==categorias[i].id ? "selected" :""%>>
+                                                <%=categorias[i].name%>
+                                        </option>
+                                        <% } %>
+
+                                </select>
+
+                            </div>
+
+                            <div class="campo">
+                                <strong>
+                                    <label class="subtitulo" for="precio">Precio</label>
+                                </strong>
+                                <input type="number" name="precio" class="barra" value="<%=producto.price || ""%>">
+                            </div>
+                            <div class="campo">
+                                <strong>
+                                    <label class="subtitulo" for="descuento">Descuento</label>
+                                </strong>
+                                <input type="number" name="descuento" class="barra" value="<%=producto.discountPercentage || 0%>" min=0 max=100>
+                            </div>
+                            <div class="campo">
+                                <strong>
+                                    <label class="subtitulo" for="stock">Stock</label>
+                                </strong>
+                            </div>
+                            <div class="detalles-cantidad editStock">
+                                <button type="button" class="menos btnMenos">-</button>
+                                <input type="number" value="<%=producto.stock || 0%>" min="1" max="150" name="stock">
+                                <button type="button" class="mas btnMas">+</button>
+                                <span class="errorInput">Ingrese un valor entre 1 y 15</span>
+                            </div>
+
+                            <div class="crearProducto">
+                                <button type="reset" class="btnBorrar" onclick="history.back();">Cancelar <i class="far fa-window-close"></i></button>
+                                <button type="submit" class="button">Editar <i class="far fa-edit"></i></button>
+                            </div>
+                            <div>
+
+                        </form>
+
+                    </section>
+                </div>
+
+            </main>
+
+            <!----------FOOTER---------->
+            <%- include('../partials/footer.ejs') %>
+            <script src="/js/productFunctions.js"></script>
+            <script src="/js/imageButton.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<!------------ HEAD  ---------->
+
+<head>
+    <%- include ('partials/head.ejs') %>
+</head>
+
+<body>
+    <!------------ HEADER  ---------->
+    <%- include ('partials/header.ejs') %>
+        <!------------ FIN HEADER  ---------->
+
+        <!------------ MAIN  ---------->
+        <main>
+            <section id="banner">
+                <figure>
+                    <img class="mt-2" src="./img/Tarjetas-Regalo-Tienda.jpeg" alt="Banner de la tienda">
+                </figure>
+            </section>
+            <section class="productos-destacados">
+                <div class="titulo">
+                    <span><%= !busqueda?'PRODUCTOS DESTACADOS':'RESULTADO BUSQUEDA' %></span>
+                </div>
+                <hr>
+
+                <%- include ('partials/productos.ejs', {productos:destacados}) %>
+                        
+            </section>
+
+            <section class="pago-envio">
+                <article class="pago">
+                    <span>MÉTODOS DE PAGO</span>
+                    <figure>
+                        <img src="./img/Medios-Pago1.jpg" alt="medios de pago aceptados">
+                    </figure>
+                </article>
+
+                <article class="envio">
+                    <i class="fas fa-truck truck"></i>
+                    <span><strong>ENVIOS GRATIS</strong><br>comprando más de<br id="brPrecio"> $ 20.000</span>
+                </article>
+
+            </section>
+
+            <section class="newsletter">
+                <h4>¡Suscríbete al Newsletter! <br>
+                    <span style="font-size: 16px; font-style: italic;">Obtén 10% de descuento en tu primera compra.</span> </h4>
+
+                <form action="#" method="GET">
+
+                    <div class="group-checkbox">
+                        <p>¿Qué mascota tienes?</p>
+                        <div>
+                            <label for="perro"><i class="fas fa-dog"></i></label>
+                            <input type="checkbox" name="intereses" id="perro" value="perro">
+                        </div>
+                        <div>
+                            <label for="gato"><i class="fas fa-cat"></i></label>
+                            <input type="checkbox" name="intereses" id="gato" value="gato">
+                        </div>
+                        <div>
+                            <label for="aves"><i class="fas fa-duck"></i></label>
+                            <input type="checkbox" name="intereses" id="aves" value="aves">
+                        </div>
+                        <div>
+                            <label for="roedores"><i class="fas fa-rabbit"></i></label>
+                            <input type="checkbox" name="intereses" id="roedores" value="roedores">
+                        </div>
+                    </div>
+                    <div class="input-control">
+                        <input type="email" name="correo" placeholder="Ingresa tu Email" required>
+                        <button class="btn" type="submit">SUSCRIBIR</button>
+                    </div>
+
+                </form>
+            </section>
+        </main>
+        <!------------ FIN MAIN ---------->
+
+        <!------------ FOOTER ---------->
+        <%- include ('partials/footer.ejs') %>
+            <!------------ FIN FOOTER ---------->
+</body>
+
+</html>

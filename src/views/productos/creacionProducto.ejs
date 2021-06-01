@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<link rel="stylesheet" href="/css/creacionProducto.css">
+<body>
+    <!----------HEADER---------->
+    <%- include('../partials/header.ejs') %>
+    
+    <!----------MAIN---------->
+    <main class="main">
+        <div class="contenedor">
+            <section class="nuevoProducto">
+                <h1 class="titulo">Agregar nuevo producto</h1>
+            </section>
+            <section>
+                <form class="formularioProducto" action="/producto/crear" method="POST" enctype="multipart/form-data">
+                  <div class="campo">
+                        <strong>
+                            <label class="subtitulo" for="nombre">Nombre</label>
+                        </strong>
+                        <input type="text" name="nombre" class="barra">
+
+                    </div>
+                    <div class="campo">
+                        <strong>
+                            <label class="subtitulo" for="descripcion">Descripción</label>
+                        </strong>
+                        <textarea name="descripcion" class="barra" required> </textarea>
+                        
+                    </div>
+                    
+                
+                    <div class="campo">
+                        <strong>
+                            <label class="subtitulo" for="categoria">Categoría</label>
+                        </strong>
+                        <select name="categoria">
+                            <% for(let i=0; i<categorias.length ; i++) { %>
+                                <option value=<%= categorias[i].id %>><%= categorias[i].name %></option>
+                            <% } %>
+                        </select>    
+
+                    </div>
+                                
+                    <div class="campo">
+                        <strong>
+                            <label class="subtitulo" for="precio">Precio</label>
+                        </strong>
+                        <input type="number" name="precio" class="barra">
+                    </div>
+                    <div class="campo">
+                        <strong>
+                            <label class="subtitulo" for="stock">Stock</label>
+                        </strong>
+                    </div>
+                        <div class="detalles-cantidad detalleCant">
+                            <button type="button" class="btnMenos menos">-</button>
+                            <input class="value" type="number" value="1" name="stock">
+                            <button type="button" class="btnMas mas">+</button>
+                        </div>
+                    
+                        <div class="btn_imagen" style="margin-top: 5%;">
+                            <label for="imagen" class="label_imagen">     
+                                <span>Cargar imagen del producto</span>
+                                <i class="fa fa-upload" aria-hidden="true"></i>
+                            </label>
+                            <input type="file" name="imagen" id="imagen" class="hidden" accept="image/*">
+                            <p id="fileName">No ha cargado ningun archivo</p>  
+                        </div>
+                    <div class="crearProducto">
+                        <button type="submit" class="button">Guardar producto <i class="far fa-save"></i></button>
+                    </div>
+
+
+                </form>
+                
+            </section>
+        </div>
+    </main>
+
+    
+    <!----------FOOTER---------->
+    <%- include('../partials/footer.ejs') %>
+    <script src="/js/productFunctions.js"></script>
+    <script src="/js/imageButton.js"></script>
+</body>
+</html>

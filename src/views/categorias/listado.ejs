@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<!------------ HEAD  ---------->
+
+<head>
+    <title>CATEGORIA | Pets</title>
+    <%- include ('../partials/head.ejs') %>
+        <link rel="stylesheet" href="/css/categoriaListado.css">
+</head>
+
+<body>
+    <!------------ HEADER  ---------->
+    <%- include ('../partials/header.ejs') %>
+        <!------------ FIN HEADER  ---------->
+
+        <!------------ MAIN  ---------->
+        <main>
+            <section class="productos-destacados">
+                <div class="titulo mt-4">
+                    <span>
+                        <%= categoria.name %>
+                    </span>
+                </div>
+                <hr class="mt-4">
+               <%- include ('../partials/productos.ejs', {productos:categoria.products}) %>
+            </section>
+
+        </main>
+        <!------------ FIN MAIN ---------->
+
+        <!------------ FOOTER ---------->
+        <%- include ('../partials/footer.ejs') %>
+            <!------------ FIN FOOTER ---------->
+</body>
+
+</html>

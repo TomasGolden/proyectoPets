@@ -1,0 +1,191 @@
+.main {
+    padding: 3vh;
+}
+
+.contenedor {
+    border-radius: 8px;
+    background-color: #00818e;
+    margin-bottom: 5vh;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-top: 7%;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    box-sizing: border-box;
+}
+
+.nuevoProducto {
+    margin: auto 0;
+}
+
+
+.formularioProducto {
+    padding: 4px;
+    margin: auto 0;
+    text-align: center;
+
+}
+
+.campo label {
+    padding-top: 1vh;
+}
+
+.titulo {
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    margin-bottom: 3vh;
+}
+
+.subtitulo {
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+    display: block;
+    color: white;
+}
+
+.barra {
+    width: 70%;
+    height: 5vh;
+    border-radius: 10px;
+    border: none;
+    margin: auto;
+    text-align: center;
+    margin-top: 0;
+}
+
+.detalle {
+    display: flex;
+    text-align: center;
+    flex-wrap: nowrap;
+    margin-top: 15px;
+    margin-left: 10px;
+    flex-wrap: nowrap;
+    font-weight: 250;
+}
+
+.detalleCant {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 4vh;
+}
+
+.btnMenos {
+    background-color: white !important;
+    width: 35px  !important;
+    border: #F8904E solid  !important;
+    border-radius: 5px  !important;
+}
+
+.btnMas {
+    background-color: white  !important;
+    width: 35px  !important;
+    border: #F8904E solid  !important;
+    border-radius: 5px  !important;
+}
+
+.value {
+    background-color: white;
+    width: 45px;
+    border: #F8904E solid;
+    border-radius: 3px;
+}
+
+.button {
+    border: solid 1px white;
+    background-color: #00818e;
+    font-size: 20px;
+    color: #fff;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    text-align: center;
+    transition: 0.5s;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.crearProducto {
+    align-items: center;
+    padding: 10px;
+    padding-bottom: 15px;
+    margin-top: 3vh;
+}
+
+.hidden {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.btn_imagen {
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.label_imagen {
+    padding: 10px 5px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+#fileName {
+    font-size: 12px;
+    margin-top: 12px;
+    margin-left: 10px;
+}
+
+.btn_imagen label:hover {
+    background: orangered;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px orangered,
+        0 0 25px orangered,
+        0 0 50px orangered,
+        0 0 100px orangered;
+}
+
+
+
+@media (min-width: 481px) {
+    .nuevoProducto {
+        padding-top: 8vh;
+    }
+}
+
+@media (min-width: 769px) {
+
+    .button:hover {
+        background: orangered;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px orangered,
+            0 0 25px orangered,
+            0 0 50px orangered,
+            0 0 100px orangered;
+    }
+
+    .barra {
+        width: 40%;
+    }
+
+    .contenedor {
+        border-radius: 8px;
+        background-color: #00818e;
+        margin-bottom: 10vh;
+        margin-right: 20%;
+        margin-left: 20%;
+        margin-top: 7%;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+        box-sizing: border-box;
+    }
+
+    .main {
+        padding: 3vh;
+    }
+
+}

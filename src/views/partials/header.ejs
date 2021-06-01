@@ -1,0 +1,89 @@
+<header>
+    <div class="header-top">
+        <figure id="logo">
+            <a href="/">
+                <img src="/img/logo.png" alt="logo furry">
+            </a>
+        </figure>
+        <% if (locals.isLogged) { %>
+            <div>
+                <p class='welcome px-0'><%= 'Hola '+ locals.userLogged.firstName %></p>
+         
+            </div>
+            <div id="account">
+                
+                <ul>
+                    <li><i class="fa fa-user-alt"></i>
+                        <ul class="mx-auto px-0">
+                            <li><a class="mx-auto w-100" href="/producto">Administrar</a></li>
+                            <li><a class="mx-auto w-100" href="/usuario/logout">Cerrar sesión</a></li>      
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+        <% } else {%>
+            <div id="account">
+                <ul>
+                    <li><i class="fa fa-user-alt"></i>
+                        <ul class="mx-auto px-0">
+                            <li><a class="mx-auto w-100" href="/usuario/login">Iniciar sesion</a></li>
+                            <li><a class="mx-auto w-100" href="/usuario/register">Registrarse</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        <% } %>
+        <div id="cart">
+            <button class="bg-transparent border-0" id="carro"><i class="fa fa-shopping-cart"></i>
+            <span class="me-0">0</span></button>
+        </div>
+        <div id="sidebar" class="collapsed border-start border-dark">
+            <button id="closer" class="btn-close mt-3 ms-3" aria-label="Close" style="color: #00818e;"></button>
+            <h2 class="mx-auto text-center mt-5 text-nowrap">Carrito de Compras</h2>
+            
+        </div>
+
+        <div class="burger-menu">
+            <button class="bg-transparent border-0" id="headerBottomToggler"><i class="fa fa-bars"></i></button>
+        </div>
+
+        <form action="/" method="GET" id=buscar>
+            <input placeholder=" Buscar productos, marcas" type="text" name="buscar">
+            <button type="submit" class="search-btn h-25 my-1"><i class="fas fa-search fa-1x"></i></button>
+        </form>
+    </div>
+    <div class="header-bottom">
+        <nav class="menu">
+            <ul class="mt-3">
+                <li><a href="/categoria/listado/1">Alimentos</a></li>
+                <li><a href="/categoria/listado/2">Juguetes</a></li>
+                <li><a href="/categoria/listado/3">Medicamentos</a></li>
+                <li><a href="/categoria/listado/4">Accesorios</a></li>
+                <li><a href="/categoria/listado/5">Snacks</a></li>
+                <li><a href="/categoria/listado/6">Belleza e higiene</a></li>
+            </ul>
+        </nav>
+        <div class="ofertas">
+            <a href="#">OFERTAS <i class="fas fa-tags"></i></a>
+        </div>
+    </div>
+    <div class="collapsed" id="header">
+        <nav class="menu">
+            <ul class="mt-2 text-center fs-5 mx-auto">
+                <li><a class="text-dark mx-auto" href="/categoria/listado/1">Alimentos</a></li>
+                <li class="mt-2 mx-auto"><a class="text-dark" href="/categoria/listado/2">Juguetes</a></li>
+                <li class="mt-2 mx-auto"><a class="text-dark" href="/categoria/listado/3">Medicamentos</a></li>
+                <li class="mt-2 mx-auto"><a class="text-dark" href="/categoria/listado/4">Accesorios</a></li>
+                <li class="mt-2 mx-auto"><a class="text-dark" href="/categoria/listado/5">Snacks</a></li>
+                <li class="mt-2 mx-auto"><a class="text-dark" href="/categoria/listado/6">Belleza e higiene</a></li>
+                <li class="ofertas mt-5">
+                    <a class="text-dark"  href="#">OFERTAS <i class="fas fa-tags"></i></a>
+                </li>
+            </ul>
+        </nav>
+        
+    </div>
+</header>
+<script src="/js/carrito.js"></script>
+<script src="/js/burger.js"></script>

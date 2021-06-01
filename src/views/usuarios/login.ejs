@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!------------ HEAD  ---------->
+    <%- include  ('../partials/head.ejs') %>   
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+    <!------------ HEADER  ---------->
+    <%- include  ('../partials/header.ejs') %>
+
+    <!------------ FIN HEADER  ---------->
+
+    <!------------ MAIN FORM LOGIN---------->
+    <main>
+     
+        <section class="form__register">
+           
+            <div class="register__box">
+                <h2>Iniciar sesión <i class="fad fa-sign-in-alt"></i></h2>
+                
+                <form action="/usuario/login" method="POST" id="login">
+                    <div class="user-box">
+                        <input type="text" name="email" required="">
+                        <label>Email de usuario</label>
+                        <% if (locals.errors && errors.email) { %>
+                            <p class="validationMsg"><%= errors.email.msg %></p>
+                        <% } %>
+                    </div>
+                    <div class="user-box">
+                        <input type="password" name="password" required="">
+                        <label>Contraseña</label>
+                        <% if (locals.errors && errors.password) { %>
+                            <p class="validationMsg"><%= errors.password.msg %></p>
+                        <% } %>
+                    </div>
+                    <label for="" class="tyc">Recuerdame<input type="checkbox" name="remember_user"></label>
+                    
+                    <a href="http://" class="register__box__sesion">Olvidé mi contraseña<br><br></a>
+                    <a href="/usuario/register" class="register__box__sesion">¿No tienes cuenta?
+                            <br><br>Registraté</a>
+            
+                    <button type="submit" form="login" value="Submit" class="register__box__a">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Ingresar
+                    </button>
+                    
+                    <a href="/" class="register__box__return">
+                    
+                        Volver atras <i class="fal fa-undo"> </i>
+                    </a>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <!------------ FOOTER ---------->
+    <%- include  ('../partials/footer.ejs') %>
+</body>
+
+</html>

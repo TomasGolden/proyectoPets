@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!------------ HEAD  ---------->
+    <%- include  ('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/carrito.css">
+    <title>Carrito | Pets</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <%- include  ('../partials/header.ejs') %>
+
+    <!-- MAIN -->
+    <main class="contenedor">
+        <h2 class="titulo">Productos en su carrito.</h2>
+            <div class="carrito">
+                <figure>
+                    <img class="foto" src="/img/productos/Bebedero-Azul.jpg" alt="Bebedero">
+                </figure>
+                <p class="detalle">Bebedero color azul para mascotas</p>
+                <div class="btnPrecio">
+                <div class="detalles-cantidad sumaProd">
+                    <button type="" class="menos">-</button>
+                    <input type="text" value="1">
+                    <button class="mas">+</button>
+                </div>
+                <p class="precioCarro">$3.500</p>
+                <a class="quitar" href="#">Quitar articulo</a>
+                </div>
+            </div>
+            <div class="separador"></div>
+            <div class="carrito">
+                <figure>
+                    <img class="foto" src="/img/productos/Kinky-Collar-Negro-Camo-Verde-Huesos-1.jpg" alt="Collar">
+                </figure>
+                <p class="detalle">Kinky collar negro camo verde huesos</p>
+                <div class="btnPrecio">
+                <div class="detalles-cantidad sumaProd">
+                    <button type="" class="menos">-</button>
+                    <input type="text" value="1">
+                    <button class="mas">+</button>
+                </div>
+                <p class="precioCarro">$1.650</p>
+                <a class="quitar" href="#">Quitar articulo</a>
+                </div>
+            </div>
+        
+            <div class="separador"></div>
+            <div class="final">
+                <h3 class="total">Total</h3>
+                <p class="pFinal">$5.150</p>
+                <button class="checkout" type="submit">PROCEDER A CHECKOUT</button>
+            </div>
+            <form action="/" method="GET" class="descuento">
+                <input class="barraDesc" placeholder="Código de descuento" type="text" name="descuento">
+                <button class="button" type="submit">APLICAR</button>
+            </form>
+            
+
+    </main>
+
+    <!-- FOOTER -->
+    <%- include ('../partials/footer.ejs') %>
+</body>
+</html>
